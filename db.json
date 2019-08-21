@@ -1,14 +1,29 @@
-{
-  "posts": [
-    { "id": 1, "title": "Post 1" },
-    { "id": 2, "title": "Post 2" },
-    { "id": 3, "title": "Post 3" }
-  ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 },
-    { "id": 2, "body": "some comment", "postId": 1 }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+{ "auth": {
+        "identity": {
+
+          # Include both password and totp methods
+            "methods": [
+                "password",
+                "totp"
+            ],
+            
+            # TOTP (New method)
+            "totp": {
+                "user": {
+                    "name": "firstname.surname@email.com",
+                    "domain:" { "id": "default" },
+                    "passcode": "012345"
+                }
+            },
+
+            # Password (Already exists)
+            "password": {
+                "user": {
+                    "name": "firstname.surname@email.com",
+                    "domain:" { "id": "default" },
+                    "password": "UserDefinedPassword"
+                }
+            }
+        }
+    }
 }
